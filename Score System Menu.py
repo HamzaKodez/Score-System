@@ -24,7 +24,7 @@ def menu():
     A: Individual Player Menu
     B: Team Menu
     C: Exit Menu
-
+    
 ========================================================
 \nPlease select what you wish to view: ''')
         if choice == "A" or choice == "a":
@@ -42,7 +42,7 @@ def menu():
 # This menu will loop, instead of the first one. As some components,
 # do not have to be repeated such as the "Press Enter To Continue" and loading.
 def menu2():
-
+    
 # This loop has been done to ensure that if an invalid choice is to be typed by mistake,
 # the menu will load again with an error message.
     running = True
@@ -58,7 +58,7 @@ def menu2():
     A: Individual Player Menu
     B: Team Menu
     C: Exit Menu
-
+    
 ========================================================
 \nPlease select what you wish to view: ''')
 # This IF statement will take the user to the player menu.
@@ -72,7 +72,7 @@ def menu2():
 # This ELIF statement ends the program.
         elif choice == "C" or choice == "c":
             exit()
-# This ELSE statement will loop back to the beginning of the menu if an invalid choice is inputted.
+# This ELSE statement will loop back to the beginning of the menu if an invalid choice is inputted. 
         else:
             time.sleep(0.3)
             print("\nERROR! Please enter a valid choice.")
@@ -116,7 +116,7 @@ def playerMenu():
             time.sleep(0.5)
             print (whole_thing)
             text_file.close()
-
+            
 # This ELIF statement will allow the user to delete a player from the text file.
         elif choice == "B" or choice == "b":
             print("These are the current players and their score:")
@@ -168,13 +168,13 @@ def teamMenu():
         time.sleep(0.2)
         choice = input('''
 ====================================================
-
-    A: Add Team & Score
-    B: Delete Team
-    C: View Scores
+                                                    
+    A: Add Team & Score                             
+    B: Delete Team                                  
+    C: View Scores                                  
     D: Back To Main Menu
     E: Exit Menu
-
+                                                    
 ====================================================
 \nPlease select what you wish to do: ''')
 
@@ -196,7 +196,7 @@ def teamMenu():
             time.sleep(0.5)
             print (whole_thing)
             text_file.close()
-
+            
 # This ELIF statement will allow the user to delete a player from the text file.
         elif choice == "B" or choice == "b":
             print("These are the current teams and their score")
@@ -229,7 +229,7 @@ def teamMenu():
 # This ELIF statement exits the entire program.
         elif choice == "E" or choice == "e":
             exit()
-
+        
 # This ELSE statement will loop back to the beginning of the team menu if an invalid choice is inputted.
         else:
             time.sleep(0.3)
