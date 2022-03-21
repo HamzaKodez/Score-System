@@ -11,8 +11,8 @@ def main():
 def menu():
     r = True
     while r == True:
-        print("========================================================")
-        print("***********|Welcome to The Tournament Menu|*************")
+        print("\n========================================================")
+        print("************|Welcome to The Tournament Menu|************")
         print("========================================================")
         enter = input("\n[Press Enter To Continue] ")
         time.sleep(0.3)
@@ -100,7 +100,7 @@ def playerMenu():
 ====================================================
 \nPlease select what you wish to do: ''')
 
-# This ELIF statement will allow the user to write the name and score of the player.
+# This IF statement will allow the user to write the name and score of the player.
         if choice == "A" or choice == "a":
             save_name = input('Enter your name: ').title()
             save_score = input('Enter your score: ')
@@ -109,7 +109,7 @@ def playerMenu():
             text_file.close()
             if len(whole_thing) < 40:
                 text_file = open("highscores.txt", "a")
-                text_file.write("\n" + save_name + ' | ' + save_score + "\n")
+                text_file.write("\n" + save_name + ' | ' + save_score)
                 text_file.close()
             text_file = open("highscores.txt", "r")
             whole_thing = text_file.read()
@@ -125,7 +125,7 @@ def playerMenu():
             print(whole_thing)
             text_file.close()
             time.sleep(0.3)
-            save_delete = input("Please enter the name of the player you wish to delete: ") + " | "
+            save_delete = input("Please enter the name of the player you wish to delete: ").title() + " |" 
             #print(f"save_delete = {save_delete}")
             with open("highscores.txt", "r") as f:
                 lines = f.readlines()
@@ -134,6 +134,8 @@ def playerMenu():
                 for line in lines:
                     if not(line.startswith(save_delete)):
                         f.write(line)
+            time.sleep(0.3)
+            print("\nPlayer has been deleted.")
 
 # This ELIF statement will allow the user to view the scores of all players.
         elif choice == "C" or choice == "c":
@@ -189,7 +191,7 @@ def teamMenu():
             text_file.close()
             if len(whole_thing) < 10:
                 text_file = open("teamhighscores.txt", "a")
-                text_file.write("\n" + save_name + ' | ' + save_score + "\n")
+                text_file.write("\n" + save_name + ' | ' + save_score)
                 text_file.close()
             text_file = open("teamhighscores.txt", "r")
             whole_thing = text_file.read()
@@ -205,7 +207,7 @@ def teamMenu():
             print(whole_thing)
             text_file.close()
             time.sleep(0.3)
-            save_delete = input("Please enter the name of the player you wish to delete: ") + " | "
+            save_delete = input("Please enter the name of the team you wish to delete: ").title() + " |"
             # print(f"save_delete = {save_delete}")
             with open("teamhighscores.txt", "r") as f:
                 lines = f.readlines()
@@ -214,6 +216,8 @@ def teamMenu():
                 for line in lines:
                     if not(line.startswith(save_delete)):
                         f.write(line)
+            time.sleep(0.3)
+            print("\nTeam has been deleted. ")
 
 # This ELIF statement will allow the user to view the scores of all teams.
         elif choice == "C" or choice == "c":
@@ -234,6 +238,6 @@ def teamMenu():
         else:
             time.sleep(0.3)
             print("\nERROR: Please select a choice!")
-            runningplayer == True
+            runningteam == True
 
 main()
