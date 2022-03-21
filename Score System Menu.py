@@ -107,7 +107,7 @@ def playerMenu():
             text_file = open("highscores.txt", "r")
             whole_thing = text_file.readlines()
             text_file.close()
-            if len(whole_thing) < 40:
+            if len(whole_thing) < 21:
                 text_file = open("highscores.txt", "a")
                 text_file.write("\n" + save_name + ' | ' + save_score)
                 text_file.close()
@@ -189,7 +189,7 @@ def teamMenu():
             text_file = open("teamhighscores.txt", "r")
             whole_thing = text_file.readlines()
             text_file.close()
-            if len(whole_thing) < 10:
+            if len(whole_thing) < 6:
                 text_file = open("teamhighscores.txt", "a")
                 text_file.write("\n" + save_name + ' | ' + save_score)
                 text_file.close()
