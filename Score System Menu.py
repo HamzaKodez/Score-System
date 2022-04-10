@@ -20,7 +20,6 @@ def menu():
         time.sleep(0.5)
         choice = input('''
 ========================================================
-
     A: Individual Player Menu
     B: Team Menu
     C: Exit Menu
@@ -54,7 +53,6 @@ def menu2():
         time.sleep(0.3)
         choice = input('''
 ========================================================
-
     A: Individual Player Menu
     B: Team Menu
     C: Exit Menu
@@ -90,15 +88,15 @@ def playerMenu():
         time.sleep(0.5)
         choice = input('''
 ====================================================
-
     A: Add Player & Score
     B: Delete Player
     C: View Scores
     D: Back To Main Menu
     E: Exit Menu
-
 ====================================================
 \nPlease select what you wish to do: ''')
+        
+        text_file = open("highscores.txt", "a")
 
 # This IF statement will allow the user to write the name and score of the player.
         if choice == "A" or choice == "a":
@@ -125,7 +123,7 @@ def playerMenu():
             print(whole_thing)
             text_file.close()
             time.sleep(0.3)
-            save_delete = input("Please enter the name of the player you wish to delete: ").title() + " |" 
+            save_delete = input("\nPlease enter the name of the player you wish to delete: ").title() + " |" 
             #print(f"save_delete = {save_delete}")
             with open("highscores.txt", "r") as f:
                 lines = f.readlines()
@@ -180,16 +178,16 @@ def teamMenu():
 ====================================================
 \nPlease select what you wish to do: ''')
 
+        text_file = open("teamhighscores.txt", "a")
+
 # This ELIF statement will allow the user to write the name and score of the team.
         if choice == "A" or choice == "a":
             save_name = input('Enter your team name: ').title()
-            save_score = input('Enter your score: ')
-            text_file = open("highscores.txt", "a")
-            text_file.close()
+            save_score = input('Enter your team score: ')
             text_file = open("teamhighscores.txt", "r")
             whole_thing = text_file.readlines()
             text_file.close()
-            if len(whole_thing) < 6:
+            if len(whole_thing) < 5:
                 text_file = open("teamhighscores.txt", "a")
                 text_file.write("\n" + save_name + ' | ' + save_score)
                 text_file.close()
